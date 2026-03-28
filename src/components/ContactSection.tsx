@@ -8,10 +8,10 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // PLEASE FILL THESE WITH YOUR EMAILJS CREDENTIALS
-  const SERVICE_ID = "service_oukkshn";
-  const TEMPLATE_ID = "template_9m5wcob";
-  const PUBLIC_KEY = "PYe_NChR9clgf4dDP";
+  // EmailJS credentials using environment variables
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
